@@ -1,0 +1,36 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.integra.store",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.7.2",
+        "applicationType": "monolith",
+        "baseName": "store",
+        "packageName": "com.integra.store",
+        "packageFolder": "com/integra/store",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "hazelcast",
+        "enableHibernateCache": true,
+        "websocket": "spring-websocket",
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "gradle",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "Y2U5OWE0ZmYyZjIwZmI3NDMyYTcxODBkNzc4MDEwMDdkMzc2Y2RhZmEyMWRhZmY4ZWRmNjdhYjVjNTdlMmJlMGNkMTViMzUxYjg0ODQ1MDViNjVlYzhmZGRhZTRjMGQ4OWU1MDk4NzFmMjRiZjcxMjVkM2MwNTQwNjI2NjY4ZDk=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": ["protractor"],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "zh-cn"]
+    }
+}
