@@ -12,9 +12,7 @@
 
 	<div *ngIf="products">
 		<div class="mb-2 d-flex justify-content-end align-items-center">
-		    <span class="mr-2 col-2">Filter by name</span>
-		    <input type="search" class="form-control" [(ngModel)]="filter">
-			<span class="mx-2 col-1">Sort by</span>
+			<span class="mr-2 col-2">Filter by name</span> <input type="search" class="form-control" [(ngModel)]="filter"> <span class="mx-2 col-1">Sort by</span>
 			<div class="btn-group" role="group" jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
 				<button type="button" class="btn btn-light" jhiSortBy="name">
 					<span jhiTranslate="storeApp.product.name">Name</span> <span class="fa fa-sort"></span>
@@ -30,7 +28,7 @@
 				</button>
 			</div>
 		</div>
-		
+
 		<div class="list-group">
 			<a [routerLink]="['../product', product.id ]" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let product of (products | pureFilter:filter:'name'); trackBy: trackId">
 				<div class="row">
@@ -51,16 +49,15 @@
                             product.size}}"> {{product.size}} </span>
 						</small>
 						<div *jhiHasAnyAuthority="'ROLE_ADMIN'">
-							<button type="submit" [routerLink]="['/',
-                                       { outlets: { popup: 'product/'+
-                                       product.id + '/edit'} }]" replaceUrl="true" queryParamsHandling="merge" class="btn btn-primary btn-sm">
-								<span class="fa fa-pencil"></span> <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+							<button type="submit" [routerLink]="['/product', product.id, 'edit']" class="btn btn-primary btn-sm">
+								<fa-icon [icon]="'pencil-alt'"></fa-icon>
+								<span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
 							</button>
-							<button type="submit" [routerLink]="['/',
-                                       { outlets: { popup: 'product/'+
-                                        product.id + '/delete'} }]" replaceUrl="true" queryParamsHandling="merge" class="btn btn-danger btn-sm">
-								<span class="fa fa-remove"></span> <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+							<button type="submit" [routerLink]="['/', { outlets: { popup: 'product/'+ product.id + '/delete'} }]" replaceUrl="true" queryParamsHandling="merge" class="btn btn-danger btn-sm">
+								<fa-icon [icon]="'times'"></fa-icon>
+								<span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
 							</button>
+
 						</div>
 					</div>
 				</div>
