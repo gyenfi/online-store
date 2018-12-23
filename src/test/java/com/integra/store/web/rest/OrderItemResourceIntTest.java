@@ -3,6 +3,8 @@ package com.integra.store.web.rest;
 import com.integra.store.StoreApp;
 
 import com.integra.store.domain.OrderItem;
+import com.integra.store.domain.Product;
+import com.integra.store.domain.ProductOrder;
 import com.integra.store.repository.OrderItemRepository;
 import com.integra.store.service.OrderItemService;
 import com.integra.store.web.rest.errors.ExceptionTranslator;
@@ -100,6 +102,16 @@ public class OrderItemResourceIntTest {
             .quantity(DEFAULT_QUANTITY)
             .totalPrice(DEFAULT_TOTAL_PRICE)
             .status(DEFAULT_STATUS);
+        // Add required entity
+        Product product = ProductResourceIntTest.createEntity(em);
+        em.persist(product);
+        em.flush();
+        orderItem.setProduct(product);
+        // Add required entity
+        ProductOrder productOrder = ProductOrderResourceIntTest.createEntity(em);
+        em.persist(productOrder);
+        em.flush();
+        orderItem.setOrder(productOrder);
         return orderItem;
     }
 
